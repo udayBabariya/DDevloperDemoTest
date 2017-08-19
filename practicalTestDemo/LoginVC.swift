@@ -18,6 +18,8 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         uiDesign()
+        tfUsername.delegate = self
+        tfPassword.delegate = self
                 
     }
     
@@ -59,6 +61,26 @@ class LoginVC: UIViewController {
         alert.addAction(actionOK)
         self.present(alert, animated: true, completion: nil)
     }
+    
+    func checkCredintials() {
+        
+    }
+    
 
 }
+
+
+extension LoginVC: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
+
+
+
+
+
+
 
